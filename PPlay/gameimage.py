@@ -5,6 +5,8 @@ from pygame.locals import *
 from . import window
 from . import gameobject
 
+# -*- coding: utf-8 -*-
+
 # Initializes pygame's modules
 pygame.init()
         

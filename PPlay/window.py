@@ -1,12 +1,11 @@
 # Pygame and system modules
 import sys
-
 import pygame
 from pygame.locals import *
-
 from . import keyboard
-from PPlay import mouse
+from . import mouse
 
+# -*- coding: utf-8 -*-
 
 # Initializes pygame's modules
 pygame.init()

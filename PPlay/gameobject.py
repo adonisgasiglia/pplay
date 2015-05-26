@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """The most basic game class"""
 class GameObject():
     """Creates a GameObject in X, Y co-ords, with Width x Height"""

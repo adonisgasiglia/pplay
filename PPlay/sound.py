@@ -1,6 +1,8 @@
 import pygame
 import pygame.mixer
 
+# -*- coding: utf-8 -*-
+
 # Initizalizes pygame's modules
 pygame.init()
 """Sound é uma classe de controle dos sons do jogo - efeitos, música"""

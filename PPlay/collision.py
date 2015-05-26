@@ -2,6 +2,8 @@
 from . import point
 #from point import Point
 
+# -*- coding: utf-8 -*-
+
 """A simple class to deal with basic collision methods"""
 """
 Must note that the collision is inclusive, i.e.,

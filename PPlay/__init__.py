@@ -1,1 +1,12 @@
-__author__ = 'adonisgasiglia'
+__all__ =   [
+            "animation",
+            "collision",
+            "gameimage",
+            "gameobject",
+            "keyboard",
+            #"mouse",
+            "point",
+            #"sound",
+            "sprite",
+            "window"
+            ]
