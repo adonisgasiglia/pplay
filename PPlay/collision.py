@@ -1,6 +1,6 @@
 # Modules import
 from . import point
-#from point import Point
+import pygame
 
 # -*- coding: utf-8 -*-
 
@@ -8,7 +8,7 @@ from . import point
 """
 Must note that the collision is inclusive, i.e.,
 occurs when one enters the other effectively,
-not only when in the same position of the edge.
+not only when over the same position of the edge.
 """
 class Collision():
     """
@@ -24,8 +24,8 @@ class Collision():
         return True
 
     """
-    game_object1: the origin GameObject
-    game_object2: the target GameObject
+    args[0]: the origin GameObject
+    args[1]: the target GameObject
     """
     @classmethod
     def collided(cls, *args):
@@ -44,7 +44,32 @@ class Collision():
 
         return (Collision.collided_rect(game_object1_min, game_object1_max,
                                         game_object2_min, game_object2_max))
-            
+
+    """
+    Perfect-pixel collision using masks.
+    """
+    @classmethod
+    def perfect_collision(cls, gameimage1, gameimage2):
+        """
+        Both objects must extend a GameImage, 
+        since it has the pygame.mask and pygame.Rect
+        """
+        offset_x = (gameimage2.rect.left - gameimage1.rect.left)
+        offset_y = (gameimage2.rect.top - gameimage1.rect.top)
+        
+        mask_1 = pygame.mask.from_surface(gameimage1.image)
+        mask_2 = pygame.mask.from_surface(gameimage2.image)
+        
+        if(mask_1.overlap(mask_2, (offset_x, offset_y)) != None):
+            return True
+        return False
+
+    """
+    Perfect collision aux - is called by GameImage
+    """
+    @classmethod
+    def collided_perfect(cls, gameimage1, gameimage2):
+        return (Collision.perfect_collision(gameimage1, gameimage2))
                       
             
         

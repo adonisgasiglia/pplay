@@ -93,18 +93,17 @@ class Animation(gameimage.GameImage):
     def draw(self):
         if(self.drawable):
             # Clips the frame (rect on the image)
-            clip_rect = Rect(self.curr_frame*self.width,
-                             0,
-                             self.width,
-                             self.height
-                             )
+            clip_rect = pygame.Rect(self.curr_frame*self.width,
+                                    0,
+                                    self.width,
+                                    self.height
+                                    )
 
-            window.Window.get_screen().blit(
-                self.image,
-                pygame.Rect(self.x, self.y, self.width, self.height),
-                area=clip_rect
-                )
-            
+            # Updates the pygame rect based on new positions values
+            self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+
+            # Blits the image with the rect and clip_rect clipped
+            window.Window.get_screen().blit(self.image, self.rect, area=clip_rect)
         
     
     #----------------------PLAYING CONTROL METHODS----------------------
