@@ -1,7 +1,7 @@
+# coding= utf-8
+
 import pygame
 import pygame.mixer
-
-# -*- coding: utf-8 -*-
 
 # Initizalizes pygame's modules
 pygame.init()
@@ -63,6 +63,6 @@ class Sound():
         self.loop = repeat
 
     def fadeout(self, time_ms):
-       self.sound.fadeout(time)
+       self.sound.fadeout(time_ms)
 
 

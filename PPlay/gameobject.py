@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# coding= utf-8
 
 """The most basic game class"""
 class GameObject():
@@ -9,8 +9,9 @@ class GameObject():
         self.width = 0
         self.height = 0
 
+
     def collided(self, obj):
         # Module import
         from . import collision
-        
+
         return collision.Collision.collided(self, obj)
