@@ -15,3 +15,9 @@ class GameObject():
         from . import collision
 
         return collision.Collision.collided(self, obj)
+
+    def loadSound(self, sound_file):
+        # Module import
+        from . import sound
+
+        self.sound = sound.Sound(sound_file)
